@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introvert vs Extrovert</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("https://media.stockimg.ai/image/v2/FcGWj6koVMhi.png?quality=75&width=1024") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.95);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6a1b9a;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #6a1b9a;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #6a1b9a;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #4a148c;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Introvert vs Extrovert</h1>
+      <p>Personality traits often fall on a spectrum between introversion and extroversion. Understanding these traits helps you recognize your preferences and how you interact with the world around you.</p>
+
+      <h2>Introvert</h2>
+      <p>Introverts tend to focus on their inner world of thoughts and feelings. They often enjoy solitary activities and require alone time to recharge their energy.</p>
+      <ul>
+        <li>Enjoys quiet time and solitude</li>
+        <li>Prefers deep, meaningful conversations over small talk</li>
+        <li>Feels drained after large social events</li>
+        <li>Reflective and introspective</li>
+      </ul>
+
+      <h2>Extrovert</h2>
+      <p>Extroverts are energized by being around other people and often enjoy social gatherings. They thrive in interactive environments and are usually more expressive.</p>
+      <ul>
+        <li>Enjoys social events and group activities</li>
+        <li>Talkative and outgoing</li>
+        <li>Feels energized by interacting with others</li>
+        <li>Often seeks new experiences and adventure</li>
+      </ul>
+
+      <h2>Ambivert</h2>
+      <p>Many people fall in between introversion and extroversion, called ambiverts. Ambiverts exhibit traits of both personality types depending on the situation.</p>
+      <ul>
+        <li>Can enjoy social gatherings but also needs alone time</li>
+        <li>Balanced approach to talking and listening</li>
+        <li>Adaptable to different environments</li>
+      </ul>
+
+      <a href="{{ url_for('dashboard') }}" class="back-btn">⬅ Back to Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

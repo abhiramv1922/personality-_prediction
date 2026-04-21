@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Predictor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("https://media.stockimg.ai/image/v2/FcGWj6koVMhi.png?quality=75&width=1024") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 10px;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+            width: 420px;
+            text-align: center;
+        }
+
+        .form-box h2 {
+            margin-bottom: 25px;
+            color: #6a1b9a;
+            font-size: 26px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input[type="number"] {
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input[type="number"]:focus {
+            border-color: #6a1b9a;
+            box-shadow: 0px 0px 6px rgba(106, 27, 154, 0.5);
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #6a1b9a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4a148c;
+        }
+
+        .form-box a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #283593;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .form-box a:hover {
+            color: #1a237e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Personality Predictor</h2>
+            <form method="POST">
+
+                <label for="Time_spent_Alone">Time Spent Alone (hours/day):</label>
+                <input type="number" name="Time_spent_Alone" step="0.1" min="0" max="24" required>
+
+                <label for="Stage_fear">Stage Fear (1-10):</label>
+                <input type="number" name="Stage_fear" step="1" min="1" max="10" required>
+
+                <label for="Social_event_attendance">Social Event Attendance (per month):</label>
+                <input type="number" name="Social_event_attendance" step="1" min="0" required>
+
+                <label for="Going_outside">Going Outside Frequency (per week):</label>
+                <input type="number" name="Going_outside" step="1" min="0" required>
+
+                <label for="Drained_after_socializing">Drained After Socializing (1-10):</label>
+                <input type="number" name="Drained_after_socializing" step="1" min="1" max="10" required>
+
+                <label for="Friends_circle_size">Friends Circle Size:</label>
+                <input type="number" name="Friends_circle_size" step="1" min="0" required>
+
+                <label for="Post_frequency">Social Media Post Frequency (per week):</label>
+                <input type="number" name="Post_frequency" step="1" min="0" required>
+
+                <input type="submit" value="Predict Personality">
+            </form>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

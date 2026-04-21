@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personality Prediction Result</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("data:image/jpeg;base64,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") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .result-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 420px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .result-box h2 {
+      color: #6a1b9a; /* purple theme */
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .result-box p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: #6a1b9a;
+      padding: 12px 22px;
+      margin: 10px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #4a148c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h2>Your Personality Type: {{ prediction }}</h2>
+    <p>Discover your personality tendencies and understand yourself better. Remember, everyone is unique!</p>
+    <a href="{{ url_for('home') }}" class="btn">🔄 Try Again</a>
+    <a href="{{ url_for('dashboard') }}" class="btn">🏠 Dashboard</a>
+    <a href="{{ url_for('logout') }}" class="btn">🚪 Logout</a>
+  </div>
+</body>
+</html>

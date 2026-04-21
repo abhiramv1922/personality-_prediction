@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Personality Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("https://cdn.pixabay.com/photo/2020/04/03/08/36/brain-4999251_1280.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .overlay {
+            background: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: #fff;
+            margin: 50px auto;
+            padding: 40px;
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #4b0082;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            padding: 12px 20px;
+            background: #4b0082;
+            color: #fff;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h2>About MindMatrix Personality Predictor</h2>
+            <p>
+                Personality plays a vital role in shaping how individuals think, feel, and behave across various situations. It influences personal relationships, workplace dynamics, decision-making, and overall well-being. Understanding one’s personality provides a foundation for self-awareness, helping people identify their strengths, emotional triggers, and communication styles. In psychology, personality is commonly studied through models such as the Big Five (Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism), which describe human traits through measurable dimensions.
+            </p>
+            <p>
+                The MindMatrix Personality Prediction System leverages artificial intelligence and data-driven insights to analyze behavioral and linguistic patterns. By assessing users’ inputs, responses, and interaction styles, the model predicts dominant personality traits that align with established psychological frameworks. These insights are not merely diagnostic—they empower individuals to reflect, grow, and make more informed personal and professional choices.
+            </p>
+            <p>
+                Personality prediction through AI offers transformative potential in education, recruitment, mental health, and personal development. For instance, students can understand their learning styles better, organizations can enhance team compatibility, and therapists can tailor interventions more effectively. Unlike traditional assessments, AI models can adapt dynamically, interpreting both quantitative data and subtle textual nuances to generate precise personality insights.
+            </p>
+            <p>
+                MindMatrix utilizes advanced machine learning techniques, including Natural Language Processing (NLP) and sentiment analysis, to evaluate personality indicators from language patterns. This predictive process involves feature extraction, sentiment weighting, and probabilistic classification, ensuring high accuracy and interpretability. The system is continuously trained on diverse datasets, making it capable of recognizing complex emotional and behavioral cues.
+            </p>
+            <p>
+                Understanding personality is not about labeling people—it’s about discovering the factors that make each person unique. By providing users with an evidence-based personality profile, MindMatrix encourages self-reflection and continuous improvement. The insights gained can guide users in setting realistic goals, improving emotional regulation, and enhancing interpersonal skills—core attributes for both personal success and societal harmony.
+            </p>
+            <p>
+                In an increasingly data-driven world, the ethical and transparent use of AI for personality prediction is crucial. MindMatrix ensures data privacy, fairness, and accuracy at every stage of prediction. The system does not replace human judgment but complements it by providing meaningful, research-backed insights that encourage growth and awareness.
+            </p>
+            <p>
+                In summary, the MindMatrix Personality Predictor represents a fusion of psychology and artificial intelligence—where technology meets human understanding. It empowers individuals to explore the deeper layers of their personality through intelligent analysis, supporting self-awareness, emotional intelligence, and personal transformation. With continued innovation, AI-based personality prediction will play a major role in building emotionally intelligent communities and fostering a more empathetic, self-aware world.
+            </p>
+            <a href="{{ url_for('dashboard') }}" class="back-btn">Back</a>
+        </div>
+    </div>
+</body>
+</html>
