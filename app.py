@@ -1,10 +1,17 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = 'super_secret_key'
+
+# 🔐 Secret Key (safe for deployment)
+app.secret_key = os.environ.get("SECRET_KEY", "fallback_secret")
+
+# 🗄️ Database (SQLite - basic use)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 
 # --- User Model ---
@@ -13,6 +20,7 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
 
+# --- Home Redirect ---
 @app.route('/')
 def index():
     return redirect(url_for('login'))
@@ -46,6 +54,7 @@ def login():
         if user and check_password_hash(user.password, password):
             session['user'] = user.email
             return redirect(url_for('dashboard'))
+
         return "Invalid credentials"
 
     return render_template('login.html')
@@ -91,7 +100,7 @@ def home():
 
     if request.method == 'POST':
         try:
-            # --- Get inputs ---
+            # --- Inputs ---
             Time_spent_Alone = float(request.form['Time_spent_Alone'])
             Stage_fear = float(request.form['Stage_fear'])
             Social_event_attendance = float(request.form['Social_event_attendance'])
@@ -100,7 +109,7 @@ def home():
             Friends_circle_size = float(request.form['Friends_circle_size'])
             Post_frequency = float(request.form['Post_frequency'])
 
-            # --- Simple scoring logic ---
+            # --- Logic ---
             introvert_score = Time_spent_Alone + Drained_after_socializing + Stage_fear
             extrovert_score = Social_event_attendance + Going_outside + Friends_circle_size + Post_frequency
 
@@ -114,12 +123,14 @@ def home():
             return render_template('result.html', prediction=result)
 
         except Exception as e:
-            return f"Error occurred: {str(e)}"
+            return f"Error: {str(e)}"
 
     return render_template('home.html')
 
-# --- Run App ---
+# --- Run App (Render Compatible) ---
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
